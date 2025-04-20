@@ -102,7 +102,7 @@ export default function Home() {
           </div>
 
           <hr className="border-t relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
-          <div className="relative min-h-[50vh] w-full z-0" id="thoughts">
+          <div className="relative min-h-[50vh] w-full z-0" id="newsletter">
             <ComingSoon />
           </div>
           <hr className="border-t relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
