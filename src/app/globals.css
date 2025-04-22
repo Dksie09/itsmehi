@@ -79,6 +79,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans, Arial, Helvetica, sans-serif);
   transition: background 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 hr {
