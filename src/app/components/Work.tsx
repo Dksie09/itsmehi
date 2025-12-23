@@ -80,7 +80,7 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
       target="_blank"
       rel="noopener noreferrer"
       className={`relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${
-        zIndex < 40 ? "-ml-4" : ""
+        zIndex < 50 ? "-ml-4" : ""
       } hover:z-50 transition-all duration-200 ${
         isHovered ? "scale-110 z-50" : `z-${zIndex}`
       }`}
@@ -174,6 +174,13 @@ const CollaborationLogos: React.FC = () => {
       name: "Vorld",
       logo: "/companies/vorld.png",
       website: "https://thevorld.com/",
+      zIndex: 50,
+    },
+
+    {
+      name: "Shieldify",
+      logo: "/companies/shieldify.png",
+      website: "https://shieldify.com/",
       zIndex: 40,
     },
     {
@@ -182,6 +189,7 @@ const CollaborationLogos: React.FC = () => {
       website: "https://powerclubglobal.com/",
       zIndex: 30,
     },
+
     {
       name: "Avocado",
       logo: "/companies/avocado.jpg",
@@ -222,13 +230,19 @@ const Work: React.FC = () => {
   // Work experience data structured in an array
   const workExperiences = [
     {
-      company: "Shieldify",
-      position: "Frontend Engineering Intern",
-      logo: "/companies/shieldify.png",
-      website: "https://shieldify.com/",
+      company: "Avail",
+      position: "Frontend Engineer",
+      logo: "/companies/avail.png",
+      website: "https://availproject.org",
       description: [
-        "Built customer onboarding dashboard, implemented reporting a chargeback flow.",
-        "Created blogs in marketing website, integrated headless CMS for blog management.",
+        <>
+          Worked on plug and play widgets for{" "}
+          <LinkWithTooltip
+            href="https://elements.nexus.availproject.org/"
+            text="Nexus SDK"
+          />{" "}
+        </>,
+        <>Designed demo and showcase apps for clients and conferences.</>,
       ],
     },
     {
