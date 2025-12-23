@@ -9,6 +9,7 @@ import Projects from "./components/Projects";
 import Work from "./components/Work";
 import Moments from "./components/Moments";
 import ComingSoon from "./components/Newsletter";
+import { textBalloons } from "balloons-js";
 
 export default function Home() {
   const [cardHeight, setCardHeight] = useState("100vh");
@@ -16,6 +17,36 @@ export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
+  const hasRunBalloons = useRef(false);
+
+  useEffect(() => {
+    if (hasRunBalloons.current) return;
+    hasRunBalloons.current = true;
+
+    // Only run on December 30th
+    const today = new Date();
+    if (today.getMonth() !== 11 || today.getDate() !== 30) return;
+
+    const fontSize = window.innerWidth < 1024 ? 90 : 180;
+
+    textBalloons([
+      {
+        text: "HAPPY",
+        fontSize,
+        color: "#FFB6C1",
+      },
+    ]);
+
+    setTimeout(() => {
+      textBalloons([
+        {
+          text: "B'DAY",
+          fontSize,
+          color: "#FFB6C1",
+        },
+      ]);
+    }, 1500);
+  }, []);
 
   // Calculate and update the card height based on content
   useEffect(() => {

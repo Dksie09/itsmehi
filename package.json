@@ -13,6 +13,7 @@
     "@react-three/fiber": "^9.1.2",
     "@react-three/rapier": "^2.1.0",
     "@types/three": "^0.175.0",
+    "balloons-js": "^0.0.3",
     "leva": "^0.10.0",
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
