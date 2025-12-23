@@ -45,6 +45,11 @@ const Moments: React.FC = () => {
 
   const polaroids = [
     {
+      image: "/moments/breakpoint25.jpeg",
+      description: "Solana Breakpoint - Abu Dhabi 2025",
+      alt: "Solana Breakpoint 2025",
+    },
+    {
       image: "/moments/appwrite-community.jpeg",
       description: "Appwrite Delhi community",
       alt: "Appwrite community",
@@ -62,8 +67,9 @@ const Moments: React.FC = () => {
     {
       image: "/moments/breakpoint.jpeg",
       description: "Solana Breakpoint - Singapore 2024",
-      alt: "Solana Breakpoint",
+      alt: "Solana Breakpoint 2024",
     },
+
     {
       image: "/moments/delhi-meetup.jpeg",
       description: "Delhi Tech Meetup 2024",

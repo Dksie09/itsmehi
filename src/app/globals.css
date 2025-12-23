@@ -28,6 +28,7 @@
   --tooltip-border: #e5e5e5;
   --link: #6366f1;
   --link-foreground: #6366f1;
+  --display: #EDEDED;
 }
 
 @theme {
@@ -52,6 +53,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-balabeloo: var(--font-balabeloo);
+  --color-display: var(--display);
 }
 
 .dark {
@@ -73,6 +75,7 @@
   --tooltip-border: #262626;
   --link: #818cf8;
   --link-foreground: #818cf8;
+  --display: #ededed;
 }
 
 body {

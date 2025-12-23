@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Card from "./components/Card";
 import { ThemeProvider } from "./theme-provider";
 import Projects from "./components/Projects";
 import Work from "./components/Work";
@@ -11,49 +10,10 @@ import Moments from "./components/Moments";
 import Newsletter from "./components/Newsletter";
 
 export default function Home() {
-  const [cardHeight, setCardHeight] = useState("100vh");
   const headerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
-
-  // Calculate and update the card height based on content
-  useEffect(() => {
-    const calculateHeight = () => {
-      // Wait for DOM to be fully rendered
-      setTimeout(() => {
-        if (
-          headerRef.current &&
-          heroRef.current &&
-          projectsRef.current &&
-          workRef.current
-        ) {
-          // Get the top position of header
-          const headerTop =
-            headerRef.current.getBoundingClientRect().top + window.scrollY;
-
-          // Get the bottom position of work section
-          const workBottom =
-            workRef.current.getBoundingClientRect().bottom + window.scrollY;
-
-          // Calculate the total height from header to work section
-          const totalHeight = workBottom - headerTop;
-
-          // Set the card height
-          setCardHeight(`${totalHeight + 30}px`);
-        }
-      }, 100);
-    };
-
-    // Calculate on initial render
-    calculateHeight();
-
-    // Recalculate on window resize
-    window.addEventListener("resize", calculateHeight);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", calculateHeight);
-  }, []);
 
   return (
     <ThemeProvider defaultTheme="system" storageKey="dakshi-theme">
