@@ -25,9 +25,7 @@ import { Vector3 } from "three";
 
 // Extend Three.js with meshline components
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload(
-  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb"
-);
+useGLTF.preload("/Dakshie.glb");
 useTexture.preload("/band.png");
 
 // Add proper type declarations for the extended components
@@ -164,18 +162,10 @@ function Band({
   } as const;
 
   // First cast to unknown, then to CustomGLTFResult to avoid TypeScript casting errors
-  const gltf = useGLTF(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/Dakshie.glb"
-      : "https://dakshie.xyz/Dakshie.glb"
-  );
+  const gltf = useGLTF("/Dakshie.glb");
   const { nodes, materials } = gltf as unknown as CustomGLTFResult;
 
-  const texture = useTexture(
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000/band.png"
-      : "https://dakshie.xyz/band.png"
-  );
+  const texture = useTexture("/band.png");
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>
